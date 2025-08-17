@@ -1,4 +1,4 @@
-# data_mining_project
+# data_driven_supply_chain_analytics
 
 The dataset for this project originates from a rich supply chain and sales context, aiming to explore various facets of customer behavior, product performance, and logistical efficiency. It includes a wealth of data entries and features that span sales information, shipping details, and product categories. The primary research question for this project is: How can data-driven insights enhance operational efficiency and customer satisfaction in supply chain management?
 
