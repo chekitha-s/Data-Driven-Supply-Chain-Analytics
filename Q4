@@ -1,0 +1,164 @@
+SMART QUESTION – 4
+
+What is the relationship between shipping mode choice and customer satisfaction or sales benefit?
+
+
+1.	Loaded the Data Set and printed the head, tail and columns of the DATA SET 
+Index(['Type', 'Days for shipping (real)', 'Days for shipment (scheduled)',
+       'Benefit per order', 'Sales per customer', 'Delivery Status',
+       'Late_delivery_risk', 'Category Id', 'Category Name', 'Customer City',
+       'Customer Country', 'Customer Email', 'Customer Fname', 'Customer Id',
+       'Customer Lname', 'Customer Password', 'Customer Segment',
+       'Customer State', 'Customer Street', 'Customer Zipcode',
+       'Department Id', 'Department Name', 'Latitude', 'Longitude', 'Market',
+       'Order City', 'Order Country', 'Order Customer Id',
+       'order date (DateOrders)', 'Order Id', 'Order Item Cardprod Id',
+       'Order Item Discount', 'Order Item Discount Rate', 'Order Item Id',
+       'Order Item Product Price', 'Order Item Profit Ratio',
+       'Order Item Quantity', 'Sales', 'Order Item Total',
+       'Order Profit Per Order', 'Order Region', 'Order State', 'Order Status',
+       'Order Zipcode', 'Product Card Id', 'Product Category Id',
+       'Product Description', 'Product Image', 'Product Name', 'Product Price',
+       'Product Status', 'shipping date (DateOrders)', 'Shipping Mode'],
+      dtype='object')
+
+
+
+2.	Shipping Mode: 
+Standard Class    107752
+Second Class       35216
+First Class        27814
+Same Day            9737
+
+
+
+
+3.	Printed a map ‘Shipping Mode vs Sales Benefit’
+ 
+
+4.	Done One way ANOVA Test
+
+F-statistic: 1.9791817108864236
+p-value: 0.11469269801389084
+
+
+5.	Correlation Coefficient
+ 
+Shipping Mode	level_1	Benefit per order
+0	First Class	Sales per customer	0.159849
+1	Same Day	Sales per customer	0.139488
+2	Second Class	Sales per customer	0.117577
+3	Standard Class	Sales per customer	0.131890
+
+
+First Class:
+The correlation coefficient between "Benefit per order" and "Sales per customer" for First Class shipping mode is 0.159849. This positive correlation indicates a moderate positive relationship between the two variables.
+
+Same Day:
+For Same Day shipping mode, the correlation coefficient is 0.139488. This positive correlation suggests a moderate positive relationship between the benefit per order and sales per customer.
+
+Second Class:
+The correlation coefficient for Second Class shipping mode is 0.117577. This positive correlation indicates a positive relationship, but it is weaker compared to First Class and Same Day.
+
+Standard Class:
+The correlation coefficient for Standard Class shipping mode is 0.131890. Like Same Day, there is a moderate positive relationship between benefit per order and sales per customer.
+
+In summary, all shipping modes show positive correlations, indicating that as sales per customer increase, the benefit per order also tends to increase. However, the strength of the correlation varies, with First Class having the strongest positive correlation.
+
+
+6.	Done Tukey's Honest Significant Difference (HSD) test:
+
+
+      Multiple Comparison of Means - Tukey HSD, FWER=0.05       
+=================================================================
+   group1        group2     meandiff p-adj   lower  upper  reject
+-----------------------------------------------------------------
+ First Class       Same Day   -2.272 0.2511 -5.4312 0.8871  False
+ First Class   Second Class  -1.8163 0.1322 -3.9685 0.3358  False
+ First Class Standard Class  -1.1231 0.3792 -2.9275 0.6813  False
+    Same Day   Second Class   0.4557 0.9812 -2.6162 3.5276  False
+    Same Day Standard Class    1.149 0.7261 -1.6901 3.9881  False
+Second Class Standard Class   0.6933 0.7009 -0.9535 2.3401  False
+-----------------------------------------------------------------
+ 
+
+Interpreting the Tukey HSD results:
+
+The results of the Tukey HSD test are presented in the table, and it appears that none of the pairwise differences in means between the shipping modes are statistically significant. The "reject" column indicates whether the null hypothesis of equal means is rejected. Since all entries in the "reject" column are marked as "False," it suggests that there is no significant difference between the means of "Benefit per order" for any pair of shipping modes
+
+
+Conclusion:
+
+There is no significant evidence to conclude that the mean "Benefit per order" varies significantly among the different shipping modes.
+The choice of shipping mode does not appear to have a significant impact on the "Benefit per order" in the dataset.
+
+The results of the ANOVA test and the Tukey HSD test are consistent in indicating that there is no significant difference in the means of "Sales per customer" across the different shipping modes. Here's a breakdown of the key findings:
+
+### ANOVA Result:
+- The ANOVA test evaluates whether there are any statistically significant differences between the means of three or more independent groups. 
+- The p-value associated with the test is 0.1147, which is greater than the typical significance level of 0.05.
+- The conclusion is "Fail to reject the null hypothesis," suggesting that there is not enough evidence to conclude that the means are significantly different.
+
+### Tukey HSD Test:
+- The Tukey HSD test is a post hoc test performed after ANOVA to compare all possible pairs of means.
+- The table shows the mean differences between groups along with confidence intervals and whether the null hypothesis of equal means is rejected.
+- For all pairs of shipping modes, the "reject" column indicates "False," meaning there is no significant difference in means between any pair of shipping modes.
+
+### Conclusion:
+- Both statistical tests consistently suggest that the means of "Sales per customer" are not significantly different across First Class, Same Day, Second Class, and Standard Class shipping modes.
+- The p-values are relatively high, indicating that observed differences are likely due to random chance rather than a true difference in population means.
+
+In summary, based on the conducted tests, there is no evidence to support the idea that the mean values of "Sales per customer" vary significantly between the different shipping modes.
+
+
+
+
+Model Building:
+
+Random Forest:
+Accuracy of the random forest model: 55.92%
+Mean Squared Error: 1.9156603146465765
+ 
+
+ Classification Report - Random Forest:
+              precision    recall  f1-score   support
+
+           0       0.16      0.04      0.06      5531
+           1       0.03      0.00      0.01      1961
+           2       0.21      0.05      0.09      7026
+           3       0.60      0.91      0.72     21586
+
+    accuracy                           0.56     36104
+   macro avg       0.25      0.25      0.22     36104
+weighted avg       0.42      0.56      0.46     36104
+
+
+
+
+XGBoost:
+Accuracy of the XGBoost model: 59.79%
+Mean Squared Error: 1.7906326168845557
+ 
+
+ Classification Report for XGBoost Model:
+
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00      5531
+           1       0.00      0.00      0.00      1961
+           2       0.00      0.00      0.00      7026
+           3       0.60      1.00      0.75     21586
+
+    accuracy                           0.60     36104
+   macro avg       0.15      0.25      0.19     36104
+weighted avg       0.36      0.60      0.45     36104
+
+
+Conclusion:
+
+After performing EDA we fail to reject the null hypothesis that there is relationship in between Shipping mode choice and Sales Benefit.
+
+And the machine learning models proved the same. With Random Forest accuracy of 55.9% and XGBoost with 59.79.
+
+
+ 
