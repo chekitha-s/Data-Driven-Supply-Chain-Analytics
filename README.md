@@ -3,14 +3,14 @@ The dataset for this project originates from a rich supply chain and sales conte
 
 The primary research question for this project is: How can data-driven insights enhance operational efficiency and customer satisfaction in supply chain management?
 
-### SMART QUESTION:
+### SMART Questios:
 1. What factors most significantly impact delivery times, and how can we mitigate the risk of late deliveries?
 2. Can customer purchasing patterns be predicted to enhance inventory management and marketing strategies?
 3. How does the product category relate to sales performance, and can this insight inform inventory stocking?
 4. What is the relationship between shipping mode choice and customer satisfaction or sales benefit?
 5. Is there any significant difference in average order profit between regions?
 
-### MODELLING METHODS:
+### Modelling Methods:
 1. Descriptive Analysis: Summary statistics, correlations, and visualizations to identify key drivers of performance.
 2. Customer Segmentation: K-Means and Hierarchical Clustering to group customers by purchasing patterns.
 3. Forecasting: Linear Regression and ARIMA for predicting sales and shipping trends.
