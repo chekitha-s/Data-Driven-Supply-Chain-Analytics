@@ -35,7 +35,7 @@ Regional Analysis – tailoring operations by geography.
 
 ### Conclusions
 Delivery Delays: Shipping mode and region are key factors in late deliveries. Air shipping reduces delays significantly compared to standard or road transport.
-Customer Segmentation: Distinct customer groups emerged — some highly price-sensitive, others loyal to premium categories. This segmentation enables tailored marketing strategies.
+Customer Segmentation: Distinct customer groups emerged some highly price-sensitive, others loyal to premium categories. This segmentation enables tailored marketing strategies.
 Sales Drivers: Technology and office supply categories consistently outperform others, while seasonal trends (e.g., end-of-year spikes) play a major role in sales volume.
 Inventory Insights: Certain categories maintain steady demand regardless of market downturns, suggesting they should always remain in stock for stability.
 Profitability: Regional differences in order profit were identified, indicating that operations can be optimized by focusing on higher-margin regions.
